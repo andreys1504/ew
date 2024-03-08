@@ -1,0 +1,54 @@
+@EclipseWorks.AdminTarefas.Api_HostAddress = http://localhost:5454
+
+### CriarProjeto
+POST {{EclipseWorks.AdminTarefas.Api_HostAddress}}/projetos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nomeProjeto": "Meu Contador",
+  "IdUsuario": "2e197f3f-a9d0-48f8-a893-7077677b32ca"
+}
+
+### ProjetosPorUsuario
+GET {{EclipseWorks.AdminTarefas.Api_HostAddress}}/projetos/2e197f3f-a9d0-48f8-a893-7077677b32ca
+Accept: application/json
+Content-Type: application/json
+
+### CriarTarefa
+POST {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas
+Accept: application/json
+Content-Type: application/json
+
+{
+  "IdProjeto": "9d3924e1-0393-4fa9-8b51-1d8388385cfc",
+  "Titulo": "Criar Front-End",
+  "Descricao": "Time de Front-End desenvolver aplicação Angular",
+  "DataVencimento": "2024-03-16",
+  "IdStatus": 1,
+  "IdPrioridadeTarefa": 1,
+  "IdUsuario": "2e197f3f-a9d0-48f8-a893-7077677b32ca"
+}
+
+### TarefasPorProjeto
+GET {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/9d3924e1-0393-4fa9-8b51-1d8388385cfc
+Accept: application/json
+Content-Type: application/json
+
+### AtualizarTarefa
+PUT {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/106304bb-1861-483a-beb3-5988a0eff56c
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Titulo": "Criar Front-End 2",
+  "Descricao": "Time de Front-End desenvolver aplicação Angular 2",
+  "IdStatus": 2,
+  "IdUsuario": "2e197f3f-a9d0-48f8-a893-7077677b32ca"
+}
+
+### RemoverTarefaProjeto
+DELETE {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/106304bb-1861-483a-beb3-5988a0eff56c
+Accept: application/json
+Content-Type: application/json
+

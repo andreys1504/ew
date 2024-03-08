@@ -1,0 +1,33 @@
+name: eclipse-works-admin-tarefas
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "SqlServer2019!"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+      
+  mssqltools:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - sqlserver
+    volumes:
+      - ./start-project/banco-dados/banco-dados-.sql:/tmp/banco-dados/banco-dados2.sql
+      - ./start-project/banco-dados/banco-dados-.sh:/tmp/banco-dados/banco-dados2.sh
+    command: /bin/bash ./tmp/banco-dados/banco-dados2.sh
+    
+  api:
+    image: eclipse-works-admin-tarefas-api:latest
+    container_name: api
+    build: 
+      context: ./src
+      dockerfile: Dockerfile_api
+    depends_on:
+      - sqlserver
+    ports:
+      - "5454:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DatabaseConnectionString: "Server=sqlserver,1433;Database=AdminTarefas;User Id=sa;Password=SqlServer2019!;TrustServerCertificate=True;"
+    restart: always
