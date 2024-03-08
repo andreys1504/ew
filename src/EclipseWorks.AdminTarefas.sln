@@ -23,9 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Tests", "3-Tests", "{1345
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Apis", "2-Apis", "{6501D757-B066-4029-8C99-28C8192E7413}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EclipseWorks.AdminTarefas.Application.Tests", "EclipseWorks.AdminTarefas.Application.Tests\EclipseWorks.AdminTarefas.Application.Tests.csproj", "{CB61694D-979D-4293-A46D-66BD6201B02F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EclipseWorks.AdminTarefas.Application.Tests", "EclipseWorks.AdminTarefas.Application.Tests\EclipseWorks.AdminTarefas.Application.Tests.csproj", "{CB61694D-979D-4293-A46D-66BD6201B02F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EclipseWorks.AdminTarefas.Tests", "EclipseWorks.AdminTarefas.Tests\EclipseWorks.AdminTarefas.Tests.csproj", "{36561F49-9F40-473A-A036-082BB1728A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EclipseWorks.AdminTarefas.Tests", "EclipseWorks.AdminTarefas.Tests\EclipseWorks.AdminTarefas.Tests.csproj", "{36561F49-9F40-473A-A036-082BB1728A8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Infra", "1-Infra", "{D5FC7AA4-4EFF-46D9-9052-4252067736C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,7 +74,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CDECE6FF-894D-486C-B958-955AFE95D012} = {6501D757-B066-4029-8C99-28C8192E7413}
 		{813C4A4E-7F1B-4F2E-9D19-299F5AB6662C} = {25D25ED1-3CF8-41F2-8A5C-EF34AF0CD05B}
-		{43E413A9-56B0-4C81-BCFF-06CCD51F21B7} = {25D25ED1-3CF8-41F2-8A5C-EF34AF0CD05B}
+		{43E413A9-56B0-4C81-BCFF-06CCD51F21B7} = {D5FC7AA4-4EFF-46D9-9052-4252067736C3}
 		{F4EA5B9A-5B76-4426-BB26-A882279FF7A3} = {EA544F7A-D222-4BEE-85CD-23EB84471596}
 		{4E0A62F9-A9AF-4431-8FAD-01376D659430} = {25D25ED1-3CF8-41F2-8A5C-EF34AF0CD05B}
 		{B4F64184-3C38-4AF1-A49D-FB468C34F500} = {EA544F7A-D222-4BEE-85CD-23EB84471596}
