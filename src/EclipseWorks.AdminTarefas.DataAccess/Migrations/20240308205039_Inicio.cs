@@ -56,7 +56,8 @@ namespace EclipseWorks.AdminTarefas.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true)
+                    Nome = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
+                    IdTipoUsuario = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -152,9 +153,9 @@ namespace EclipseWorks.AdminTarefas.DataAccess.Migrations
 
 
                     INSERT INTO Usuario
-                        (Id, Nome)
+                        (Id, Nome, IdTipoUsuario)
                     VALUES
-                        ('2e197f3f-a9d0-48f8-a893-7077677b32ca', 'Andrey Mariano')
+                        ('2e197f3f-a9d0-48f8-a893-7077677b32ca', 'Andrey Mariano', 2)
                 ");
         }
 

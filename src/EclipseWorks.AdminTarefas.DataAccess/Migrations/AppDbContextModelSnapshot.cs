@@ -142,6 +142,9 @@ namespace EclipseWorks.AdminTarefas.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("IdTipoUsuario")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");

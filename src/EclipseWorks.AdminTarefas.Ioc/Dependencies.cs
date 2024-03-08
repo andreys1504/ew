@@ -2,6 +2,7 @@
 using EclipseWorks.AdminTarefas.Base.DataAccessLayer;
 using EclipseWorks.AdminTarefas.DataAccess;
 using EclipseWorks.AdminTarefas.DataAccess.EfContext;
+using EclipseWorks.AdminTarefas.Domain.DomainServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,8 @@ public static class Dependencies
         string databaseConnectionString)
     {
         ApplicationServicesMappings.Register(services);
+
+        DomainServicesMappings.Register(services);
 
         //AdminTarefas.DataAccess
         services.AddDbContext<AppDbContext>(options =>

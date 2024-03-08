@@ -1,4 +1,5 @@
-@EclipseWorks.AdminTarefas.Api_HostAddress = http://localhost:5454
+# @EclipseWorks.AdminTarefas.Api_HostAddress = http://localhost:5454
+@EclipseWorks.AdminTarefas.Api_HostAddress = https://localhost:7008
 
 ### CriarProjeto
 POST {{EclipseWorks.AdminTarefas.Api_HostAddress}}/projetos
@@ -21,7 +22,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "IdProjeto": "9d3924e1-0393-4fa9-8b51-1d8388385cfc",
+  "IdProjeto": "c56b501e-7bb0-41e1-b8a4-f82a475e0065",
   "Titulo": "Criar Front-End",
   "Descricao": "Time de Front-End desenvolver aplicação Angular",
   "DataVencimento": "2024-03-16",
@@ -31,12 +32,12 @@ Content-Type: application/json
 }
 
 ### TarefasPorProjeto
-GET {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/9d3924e1-0393-4fa9-8b51-1d8388385cfc
+GET {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/c56b501e-7bb0-41e1-b8a4-f82a475e0065
 Accept: application/json
 Content-Type: application/json
 
 ### AtualizarTarefa
-PUT {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/106304bb-1861-483a-beb3-5988a0eff56c
+PUT {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/4d1e593d-fe0b-4329-b45f-569839b5caf5
 Accept: application/json
 Content-Type: application/json
 
@@ -48,7 +49,22 @@ Content-Type: application/json
 }
 
 ### RemoverTarefaProjeto
-DELETE {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/106304bb-1861-483a-beb3-5988a0eff56c
+DELETE {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/4d1e593d-fe0b-4329-b45f-569839b5caf5
 Accept: application/json
 Content-Type: application/json
 
+### MediaTarefasConcluidasPorUsuarios
+GET {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/relatorio/media-diaria-conclusao/2e197f3f-a9d0-48f8-a893-7077677b32ca
+Accept: application/json
+Content-Type: application/json
+
+### AdicionarComentarioTarefa
+POST {{EclipseWorks.AdminTarefas.Api_HostAddress}}/tarefas/adicionar-comentario
+Accept: application/json
+Content-Type: application/json
+
+{
+  "IdTarefa": "4d1e593d-fe0b-4329-b45f-569839b5caf5",
+  "Comentario": "Tarefa atrasando",
+  "IdUsuario": "2e197f3f-a9d0-48f8-a893-7077677b32ca"
+}

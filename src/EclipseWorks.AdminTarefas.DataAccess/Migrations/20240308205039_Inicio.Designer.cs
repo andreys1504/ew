@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EclipseWorks.AdminTarefas.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240308120633_Inicio")]
+    [Migration("20240308205039_Inicio")]
     partial class Inicio
     {
         /// <inheritdoc />
@@ -144,6 +144,9 @@ namespace EclipseWorks.AdminTarefas.DataAccess.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("IdTipoUsuario")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasMaxLength(150)

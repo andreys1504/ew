@@ -20,4 +20,9 @@ public class Projeto : Entity<Guid>
     public Guid IdUsuario { get; private set; }
     public Usuario Usuario { get; private set; }
     public ICollection<Tarefa> Tarefas { get; private set; }
+
+    public void AdicionarUsuario(Usuario usuario)
+    {
+        Usuario = usuario;
+    }
 }

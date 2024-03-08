@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace EclipseWorks.AdminTarefas.Tests.Mocks.DataAccess.Repositories.Base;
 
-public class RepositoryBaseMock<TEntity, TId> : IRepositoryBase<TEntity, TId> where TEntity : Entity<TId>
+public abstract class RepositoryBaseMock<TEntity, TId> : IRepositoryBase<TEntity, TId> where TEntity : Entity<TId>
 {
     private List<TEntity> _entities;
 
@@ -12,6 +12,9 @@ public class RepositoryBaseMock<TEntity, TId> : IRepositoryBase<TEntity, TId> wh
     {
         _entities = entities;
     }
+
+
+    protected List<TEntity> Entities { get { return _entities; } }
 
 
     public Task CadastrarAsync(TEntity entity)

@@ -6,7 +6,6 @@ GO
 
 
 
-
 IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
 BEGIN
     CREATE TABLE [__EFMigrationsHistory] (
@@ -48,6 +47,7 @@ GO
 CREATE TABLE [Usuario] (
     [Id] uniqueidentifier NOT NULL,
     [Nome] nvarchar(150) NULL,
+    [IdTipoUsuario] int NOT NULL,
     CONSTRAINT [PK_Usuario] PRIMARY KEY ([Id])
 );
 GO
@@ -101,17 +101,15 @@ GO
                         (2, 'Média'),
                         (3, 'Alta');
                     INSERT INTO Usuario
-                        (Id, Nome)
+                        (Id, Nome, IdTipoUsuario)
                     VALUES
-                        ('2e197f3f-a9d0-48f8-a893-7077677b32ca', 'Andrey Mariano')
+                        ('2e197f3f-a9d0-48f8-a893-7077677b32ca', 'Andrey Mariano', 2)
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20240308120633_Inicio', N'8.0.2');
+VALUES (N'20240308205039_Inicio', N'8.0.2');
 GO
 
 COMMIT;
 GO
-
-
 

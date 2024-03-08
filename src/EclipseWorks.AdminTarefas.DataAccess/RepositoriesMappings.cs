@@ -11,5 +11,6 @@ public static class RepositoriesMappings
         services.AddTransient<ILogAlteracaoRepository, LogAlteracaoRepository>();
         services.AddTransient<IProjetoRepository, ProjetoRepository>();
         services.AddTransient<ITarefaRepository, TarefaRepository>();
+        services.AddTransient<IUsuarioRepository, UsuarioRepository>();
     }
 }

@@ -1,5 +1,7 @@
-﻿using EclipseWorks.AdminTarefas.Application.Services.Tarefa.AtualizarTarefa;
+﻿using EclipseWorks.AdminTarefas.Application.Services.Tarefa.AdicionarComentarioTarefa;
+using EclipseWorks.AdminTarefas.Application.Services.Tarefa.AtualizarTarefa;
 using EclipseWorks.AdminTarefas.Application.Services.Tarefa.CriarTarefa;
+using EclipseWorks.AdminTarefas.Application.Services.Tarefa.MediaTarefasConcluidasPorUsuarios;
 using EclipseWorks.AdminTarefas.Application.Services.Tarefa.RemoverTarefaProjeto;
 using EclipseWorks.AdminTarefas.Application.Services.Tarefa.TarefasPorProjeto;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +12,17 @@ namespace EclipseWorks.AdminTarefas.Api.Controllers;
 [Route("tarefas")]
 public class TarefaController : ControllerBase
 {
+    [HttpPost("adicionar-comentario")]
+    public async Task<IActionResult> AdicionarComentarioTarefa(
+        [FromBody] AdicionarComentarioTarefaRequest request,
+        AdicionarComentarioTarefaAppService appService)
+    {
+        var response = await appService.Handle(request);
+
+        return Ok(response);
+    }
+
+
     [HttpPut("{idTarefa}")]
     public async Task<IActionResult> AtualizarTarefa(
         Guid idTarefa,
@@ -29,6 +42,17 @@ public class TarefaController : ControllerBase
         CriarTarefaAppService appService)
     {
         var response = await appService.Handle(request);
+
+        return Ok(response);
+    }
+
+
+    [HttpGet("relatorio/media-diaria-conclusao/{idUsuario}")]
+    public async Task<IActionResult> MediaTarefasConcluidasPorUsuarios(
+        Guid idUsuario,
+        MediaTarefasConcluidasPorUsuariosAppService appService)
+    {
+        var response = await appService.Handle(idUsuario);
 
         return Ok(response);
     }
