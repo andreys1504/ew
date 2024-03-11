@@ -26,11 +26,14 @@ public sealed class AdicionarComentarioTarefaAppService
             return new AppResponse<bool>(request.Notifications);
 
 
-        Domain.Entities.Tarefa tarefa = await _tarefaRepository.BuscarPrimeiroRegistroAsync(
+        bool tarefaExistente = await _tarefaRepository.ExistenteAsync(
             where: tarefa => tarefa.Id == request.IdTarefa);
 
+        if (tarefaExistente == false)
+            throw new Exception("Tarefa inexistente");
+
         await _logAlteracaoRepository.CadastrarAsync(new LogAlteracao(
-            idEntidade: tarefa.Id.ToString(),
+            idEntidade: request.IdTarefa.ToString(),
             campo: "Comentario",
             valor: request.Comentario,
             idUsuario: request.IdUsuario.Value)
