@@ -47,6 +47,7 @@ No diretório raiz, execute: ``` docker-compose up -d ```
 
 http://localhost:5454/swagger/index.html
 
+Id Usuário teste: '2E197F3F-A9D0-48F8-A893-7077677B32CA'
 
 ### Para P.O.
 
